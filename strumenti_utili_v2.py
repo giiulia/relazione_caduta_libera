@@ -91,12 +91,12 @@ def crea_tabella(dati, colonne, percorso, template="semplice"):
     for i in range(0, len(dati)):
         #se i è un multiplo di colonne, inserisci l'acapo
         if((i+1)%(colonne) == 0):
-            content += r"""{} \\
+            content += r"""{0:.3f} \\
             \hline
             """.format(dati[i])
         #altrimenti metti l'elemento nella stessa riga
         else:
-            content += "{} & ".format(dati[i])
+            content += "{0:.3f} & ".format(dati[i])
             if(i == len(dati)-1):
                 content += r"\\"
     #crea il file
