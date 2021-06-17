@@ -1,7 +1,7 @@
 import numpy as np
 from strumenti_utili_v2 import *
 
-#sfera 1
+#pallina da ping pong
 h1 = np.array([60.3, 60.2, 60.2, 60.3])/100#in m
 h2 = np.array([58.4, 58.3, 58.3, 58.4])/100
 h3 = np.array([55.6, 55.7, 55.8, 55.7])/100
