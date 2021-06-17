@@ -30,10 +30,8 @@ s_y = np.array([
 ])/np.sqrt(4)
 print("le incertezze sulle y : {}".format(s_y))
 
-#grafico parabola
-#plt.errorbar(dati.tempi, dati.altezze, s_y, fmt='o', ls='none', label='altezze', color= "DarkSlateBlue")
+#grafico parabola con punti
 plt.scatter(dati.tempi, dati.altezze, label='$h_{t}$', color= "DarkSlateBlue")
-#plt.plot(dati.tempi, dati.altezze, color= "CornflowerBlue")
 
 a = np.arange(0.0, 0.4, 0.001) # Interi tra 0 e 0.4 con intervallo 0.001
 cost = 9.81/2      
@@ -46,7 +44,6 @@ plt.xlabel('tempo di caduta (millisecondi)')
 plt.ylabel('altezze (metri)') 
 
 plt.legend() # aggiungo una legenda
-#plt.savefig('computed_data/retta.pgf')
 plt.savefig('computed_data/parabola.png')
 plt.show()
 
@@ -95,7 +92,6 @@ xmax = max(x)+0.1*(max(x)-min(x))
 t = np.linspace(xmin,xmax) # stessa funzione ad alta densità
 plt.plot(t,line(t,coefficiente, intercetta),label=r"$y = {0:.2f}{1:.2f}$".format(coefficiente, intercetta), color="darkOrange")
 plt.legend() # aggiungo una legenda
-#plt.savefig('computed_data/retta.pgf')
 plt.savefig('computed_data/retta.png')
 plt.show()
 
@@ -108,7 +104,7 @@ plt.show()
 #crea_tabella(dati.h5, 4, "computed_data/tableHeights5.tex")
 #crea_tabella(dati.h6, 4, "computed_data/tableHeights6.tex")
 
-#----------------PARTE CORRETTA-------------------
+#----------------CORREZIONE errori sistematici-------------------
 x = dati.tempi**2
 y = dati.altezze - (0.44*dati.tempi) #stimo un errore di 1 cm (la pallina era più in alto della fotocellula)
 print("y corrette:{}".format(y))
@@ -149,7 +145,6 @@ plt.xlabel('tempo di caduta (millisecondi)')
 plt.ylabel('altezze (metri)') 
 
 plt.legend() # aggiungo una legenda
-#plt.savefig('computed_data/retta.pgf')
 plt.savefig('computed_data/parabola_corretta.png')
 plt.show()
 
@@ -198,6 +193,5 @@ xmax = max(x)+0.1*(max(x)-min(x))
 t = np.linspace(xmin,xmax) # stessa funzione ad alta densità
 plt.plot(t, line(t,coefficiente, intercetta), label=r"$y = {0:.2f}{1:.3f}$".format(coefficiente, intercetta), color="darkOrange")
 plt.legend() # aggiungo una legenda
-#plt.savefig('computed_data/retta.pgf')
-plt.savefig('computed_data/retta_corretta_2.png')
+plt.savefig('computed_data/retta_corretta.png')
 plt.show()
